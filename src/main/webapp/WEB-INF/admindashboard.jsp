@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="" name="keywords">
+<meta content="" name="description">
+
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+	rel="stylesheet">
+<!-- Icon Font Stylesheet -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+	rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css"
+	rel="stylesheet">
+<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+	rel="stylesheet" />
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/dashboard//bootstrap.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="css/dashboard/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container-fluid position-relative d-flex p-0">
+		<!-- Sidebar Start -->
+		<div class="sidebar pe-4 pb-3">
+			<nav class="navbar bg-secondary navbar-dark">
+				<a class="navbar-brand mx-4 mb-3">
+					<h3>WebDev</h3>
+				</a>
+				<div class="navbar-nav w-100">
+					<a href="/userdashboard" class="nav-item nav-link active">Dashboard</a>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown">City</a>
+						<div class="dropdown-menu bg-transparent border-0">
+							<a href="button.html" class="dropdown-item">Buttons</a> <a
+								href="typography.html" class="dropdown-item">Typography</a> <a
+								href="element.html" class="dropdown-item">Other Elements</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown">Job Title</a>
+						<div class="dropdown-menu bg-transparent border-0">
+							<a href="signin.html" class="dropdown-item">Sign In</a> <a
+								href="signup.html" class="dropdown-item">Sign Up</a> <a
+								href="404.html" class="dropdown-item">404 Error</a> <a
+								href="blank.html" class="dropdown-item">Blank Page</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown">Skills</a>
+						<div class="dropdown-menu bg-transparent border-0">
+							<a href="button.html" class="dropdown-item">Buttons</a> <a
+								href="typography.html" class="dropdown-item">Typography</a> <a
+								href="element.html" class="dropdown-item">Other Elements</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown">Experience</a>
+						<div class="dropdown-menu bg-transparent border-0">
+							<a href="signin.html" class="dropdown-item">Sign In</a> <a
+								href="signup.html" class="dropdown-item">Sign Up</a> <a
+								href="404.html" class="dropdown-item">404 Error</a> <a
+								href="blank.html" class="dropdown-item">Blank Page</a>
+						</div>
+					</div>
+
+				</div>
+			</nav>
+		</div>
+		<!-- Sidebar End -->
+
+
+		<!-- Content Start -->
+		<div class="content">
+			<!-- Navbar Start -->
+			<nav
+				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+
+				<div class="navbar-nav align-items-center ms-auto">
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"> <img
+							class="rounded-circle me-lg-2" src="/assets/images/icon.jpg"
+							alt="" style="width: 40px; height: 40px;"> <span
+							class="d-none d-lg-inline-flex"><c:out
+									value="${loggedFname}" /> <c:out
+									value="${loggedLname}" /></span>
+						</a>
+						<div
+							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+							<a href="/account" class="dropdown-item">My Account</a> <a
+								href="/logout" class="dropdown-item">Log Out</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!-- Navbar End -->
+
+			<!-- Recent Jobs Start -->
+			<div class="container-fluid pt-4 px-4">
+				<div class="bg-secondary text-center rounded p-4">
+					<div class="d-flex align-items-center justify-content-between mb-4">
+						<h6 class="mb-0">Recent Jobs</h6>
+					</div>
+					<div class="table-responsive">
+						<table
+							class="table text-start align-middle table-bordered table-hover mb-0">
+							<thead>
+								<tr style="color: #0ee951;">
+									<th scope="col">ID</th>
+									<th scope="col">Job Title</th>
+									<th scope="col">Job Description</th>
+									<th scope="col">Location</th>
+									<th scope="col">Required Experience</th>
+									<th scope="col">Wanted GPA</th>
+									<th scope="col">Apply</th>
+								</tr>
+							</thead>
+							<tbody class="text-white">
+								<c:forEach var="job" items="${jobs}">
+									<tr>
+										<td><c:out value="${job.id}" /></td>
+										<td><c:out value="${job.title}" /></td>
+										<td><c:out value="${job.description}" /></td>
+										<td><c:out value="${job.location}" /></td>
+										<td><c:out value="${job.experience_Required}" /></td>
+										<td><c:out value="${job.gpa_wanted}" /></td>
+										<td><a class="btn2" href="">Apply</a></td>
+									</tr>
+								</c:forEach>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- Recent Jobs End -->
+		</div>
+		<!-- Content End -->
+	</div>
+
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/chart/chart.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/waypoints/waypoints.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+	<script src="lib/tempusdominus/js/moment.min.js"></script>
+	<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+	<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+	<!-- Template Javascript -->
+	<script src="js/main.js"></script>
+</body>
+
+</html>
