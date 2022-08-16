@@ -14,7 +14,7 @@
 <meta name="author" content="Your name">
 
 <!-- Webpage Title -->
-<title>Login</title>
+<title>WebDev</title>
 
 <!-- Styles -->
 <link
@@ -43,7 +43,6 @@
 				id="navbarSideCollapse" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<!-- end of navbar-collapse -->
 		</div>
 		<!-- end of container -->
@@ -63,21 +62,15 @@
 							<h2 class="py-2">Delete Your Account</h2>
 						</div>
 						<div>
-
 							<form action="/delete" method="post">
 								<h3>You'll lose all the data and content in that account</h3>
-
 								<input type="hidden" name="_method" value="delete">
-
 								<div class="my-3">
 									<button class="btn" type="submit">Delete</button>
 									<a class="btn m-4" href="/userdashboard">Cancel</a>
-
 								</div>
 							</form>
 						</div>
-
-
 					</div>
 					<!-- end of div -->
 				</div>

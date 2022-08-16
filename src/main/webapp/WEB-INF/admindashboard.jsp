@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Dashboard</title>
+<title>WebDev</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -44,62 +44,21 @@
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
 			<nav class="navbar bg-secondary navbar-dark">
-				<a class="navbar-brand mx-4 mb-3">
-					<h3>WebDev</h3>
-				</a>
+				<h3>
+					<a class="navbar-brand mx-4 mb-3">WebDev</a>
+				</h3>
 				<div class="navbar-nav w-100">
 					<a href="/userdashboard" class="nav-item nav-link active">Dashboard</a>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown">City</a>
-						<div class="dropdown-menu bg-transparent border-0">
-							<a href="button.html" class="dropdown-item">Buttons</a> <a
-								href="typography.html" class="dropdown-item">Typography</a> <a
-								href="element.html" class="dropdown-item">Other Elements</a>
-						</div>
-					</div>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown">Job Title</a>
-						<div class="dropdown-menu bg-transparent border-0">
-							<a href="signin.html" class="dropdown-item">Sign In</a> <a
-								href="signup.html" class="dropdown-item">Sign Up</a> <a
-								href="404.html" class="dropdown-item">404 Error</a> <a
-								href="blank.html" class="dropdown-item">Blank Page</a>
-						</div>
-					</div>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown">Skills</a>
-						<div class="dropdown-menu bg-transparent border-0">
-							<a href="button.html" class="dropdown-item">Buttons</a> <a
-								href="typography.html" class="dropdown-item">Typography</a> <a
-								href="element.html" class="dropdown-item">Other Elements</a>
-						</div>
-					</div>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown">Experience</a>
-						<div class="dropdown-menu bg-transparent border-0">
-							<a href="signin.html" class="dropdown-item">Sign In</a> <a
-								href="signup.html" class="dropdown-item">Sign Up</a> <a
-								href="404.html" class="dropdown-item">404 Error</a> <a
-								href="blank.html" class="dropdown-item">Blank Page</a>
-						</div>
-					</div>
-
 				</div>
 			</nav>
 		</div>
 		<!-- Sidebar End -->
-
 
 		<!-- Content Start -->
 		<div class="content">
 			<!-- Navbar Start -->
 			<nav
 				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
@@ -107,8 +66,7 @@
 							class="rounded-circle me-lg-2" src="/assets/images/icon.jpg"
 							alt="" style="width: 40px; height: 40px;"> <span
 							class="d-none d-lg-inline-flex"><c:out
-									value="${loggedFname}" /> <c:out
-									value="${loggedLname}" /></span>
+									value="${loggedFname}" /> <c:out value="${loggedLname}" /></span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
@@ -152,16 +110,18 @@
 										<td><a class="btn2" href="">Apply</a></td>
 									</tr>
 								</c:forEach>
-
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
 			<!-- Recent Jobs End -->
+
 		</div>
 		<!-- Content End -->
+
 	</div>
+	<!-- Container End -->
 
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

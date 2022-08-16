@@ -15,14 +15,20 @@ public class UserApplicationService {
 
 	@Autowired
 	private UserApplicationRepository userApplicationRepository;
-	
+
 	@Autowired
 	private UserRepository userRepository;;
-	
+
+	/*----------------------------------------------------------------------------
+	CREATE USER APPLICATION
+	----------------------------------------------------------------------------*/
 	public UserApplication create(UserApplication app) {
 		return userApplicationRepository.save(app);
 	}
 
+	/*----------------------------------------------------------------------------
+	FIND USER APPLICATION BY ID
+	----------------------------------------------------------------------------*/
 	public UserApplication findById(String appId) {
 		Optional<UserApplication> optionalApp = userApplicationRepository.findById(appId);
 		if (optionalApp.isPresent()) {
@@ -30,9 +36,12 @@ public class UserApplicationService {
 		} else {
 			return null;
 		}
-		
+
 	}
-	
+
+	/*----------------------------------------------------------------------------
+	FIND USER BY ID
+	----------------------------------------------------------------------------*/
 	public User findById(Long id) {
 		Optional<User> optionalUser = userRepository.findById(id);
 		if (optionalUser.isPresent()) {
@@ -41,16 +50,20 @@ public class UserApplicationService {
 			return null;
 		}
 	}
-	
+
+	/*----------------------------------------------------------------------------
+	CREATE USER APPLICATION
+	----------------------------------------------------------------------------*/
 	public UserApplication create_userApp(Long user_id, UserApplication userApplication) {
 		Optional<User> current_user = userRepository.findById(user_id);
 		userApplication.setUser(current_user.get());
 		// --- here add file info
 		return userApplicationRepository.save(userApplication);
 	}
-	
-	
-	//update UserApplication:
+
+	/*----------------------------------------------------------------------------
+	UPDATE USER APPLICATION
+	----------------------------------------------------------------------------*/
 	public UserApplication update_current(String userApp_id, UserApplication userApplication) {
 		Optional<UserApplication> retrieveUserApp = userApplicationRepository.findById(userApp_id);
 		UserApplication newUserApp = retrieveUserApp.get();
@@ -58,15 +71,17 @@ public class UserApplicationService {
 		newUserApp.setUser_gpa(userApplication.getUser_gpa());
 		newUserApp.setYears_experience(userApplication.getYears_experience());
 		newUserApp.setSkills_for_appl(userApplication.getSkills_for_appl());
-		// ---  here add file info
+		// --- here add file info
 		return userApplicationRepository.save(newUserApp);
 	}
-	
-	//get current UserApplication by user Id:
+
+	/*----------------------------------------------------------------------------
+	GET USER APPLICATION BY USER ID
+	----------------------------------------------------------------------------*/
 	public UserApplication getCurrentUserApp(Long user_id) {
 		User currentUser = findById(user_id);
 		UserApplication myApp1 = currentUser.getUserApplication();
 		return myApp1;
-		
+
 	}
 }

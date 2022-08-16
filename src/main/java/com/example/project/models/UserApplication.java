@@ -7,69 +7,53 @@ import javax.persistence.Table;
 import javax.persistence.Lob;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.io.File;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
-import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.example.project.repositories.FileDBRepository;
 
 @Entity
 @Table(name = "userApplication")
 public class UserApplication {
-	/*
-	 * id: automatically generated as UUID name: name of the file type: mime type
-	 * data: array of bytes, map to a BLOB
-	 */
 
-	  @Id
-	  @GeneratedValue(generator = "uuid")
-	  @GenericGenerator(name = "uuid", strategy = "uuid2")
-	  private String id;
+	/*----------------------------------------------------------------------------
+	TABEL
+	----------------------------------------------------------------------------*/
+	@Id
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	private String id;
 
 	@NotNull
 	private String city;
 
-    @Min(0)
+	@Min(0)
 	private int years_experience;
 
-    @Min(1)
-    @Max(5)
+	@Min(1)
+	@Max(5)
 	private double user_gpa;
 
-	// -----------file codes add Here -------
-    //	CV
+	// CV
 	private String cvFileName;
 	private String cvFileType;
-
 	// LOB is datatype for storing large object data.
 	@Lob
 	private byte[] cvFileData;
 
-     //	certificate
-	
-
+	// Certificate
 	private String certFileName;
 	private String certFileType;
 
@@ -77,45 +61,62 @@ public class UserApplication {
 	@Lob
 	private byte[] certFileData;
 
-	
-	
-	public UserApplication(String cvFileName, String cvFileType, byte[] cvFileData,
-			String certFileName, String certFileType, byte[] certFileData) {
+	@Column(updatable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date createdAt;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date updatedAt;
+
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
+
+	/*----------------------------------------------------------------------------
+	RELATIONS
+	----------------------------------------------------------------------------*/
+	// (connection with Skill table)
+	// ManyToMany relation: many skills owned by many usersApplications
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "availableSkills_userApp", joinColumns = @JoinColumn(name = "userApplication_id"), inverseJoinColumns = @JoinColumn(name = "availableSkills_id"))
+	private List<AvailableSkills> skills_for_appl;
+
+	// (connection with User table)
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	/*----------------------------------------------------------------------------
+	CONSTRUCTOR
+	----------------------------------------------------------------------------*/
+	public UserApplication(String cvFileName, String cvFileType, byte[] cvFileData, String certFileName,
+			String certFileType, byte[] certFileData) {
 		this.cvFileName = cvFileName;
 		this.cvFileType = cvFileType;
 		this.cvFileData = cvFileData;
-		
+
 		this.certFileName = certFileName;
 		this.certFileType = certFileType;
 		this.certFileData = certFileData;
 	}
-//////////////////////////////////////RelatioShip /////////////////////////////////////////
 
-// (connection with User table)
-	@OneToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="user_id")
-    private User user;
-
-// (connection with Skill table)
-// ----- ManyToMany relation: many skills owned by many usersApplications
-	@ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "availableSkills_userApp", 
-        joinColumns = @JoinColumn(name = "userApplication_id"), 
-        inverseJoinColumns = @JoinColumn(name = "availableSkills_id")
-    )
-    private List<AvailableSkills> skills_for_appl;
-
-// This will not allow the createdAt column to be updated after creation
-	@Column(updatable = false)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date createdAt;
-	public String getCvFileName() {
-		return cvFileName;
+	public UserApplication() {
 	}
 
+	/*----------------------------------------------------------------------------
+	GETTERS AND SETTERS
+	----------------------------------------------------------------------------*/
 	public void setCvFileName(String cvFileName) {
 		this.cvFileName = cvFileName;
+	}
+
+	public String getCvFileName() {
+		return cvFileName;
 	}
 
 	public String getCvFileType() {
@@ -158,26 +159,6 @@ public class UserApplication {
 		this.certFileData = certFileData;
 	}
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date updatedAt;
-
-	@PrePersist
-	protected void onCreate() {
-		this.createdAt = new Date();
-	}
-
-	@PreUpdate
-	protected void onUpdate() {
-		this.updatedAt = new Date();
-	}
-
-//constructor + getters and setters:
-public UserApplication() {
-//
-}
-
-	
-
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -206,8 +187,6 @@ public UserApplication() {
 		this.user_gpa = user_gpa;
 	}
 
-
-
 	public User getUser() {
 		return user;
 	}
@@ -215,7 +194,6 @@ public UserApplication() {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 
 	public List<AvailableSkills> getSkills_for_appl() {
 		return skills_for_appl;
@@ -241,10 +219,8 @@ public UserApplication() {
 		this.updatedAt = updatedAt;
 	}
 
-
 	public String getId() {
 		return id;
 	}
 
-	
 }

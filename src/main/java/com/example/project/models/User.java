@@ -19,9 +19,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -32,6 +30,9 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Table(name="user")
 public class User {
 	
+	/*----------------------------------------------------------------------------
+	TABEL
+	----------------------------------------------------------------------------*/
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -56,40 +57,12 @@ public class User {
     
     private String user_role;
     
-    
-    //////////////////////////////////////RelatioShip /////////////////////////////////////////
-    
-    // (connection with UserApplocations table)
-    // ------ OneToOne relation: one user has one UserApplication --------
-    @OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    private UserApplication userApplication;
-    
-    
-    // (connection with job table)
-    // ----- ManyToMany relation: many users applied for  many jobs
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "user_job", 
-        joinColumns = @JoinColumn(name = "user_id"), 
-        inverseJoinColumns = @JoinColumn(name = "job_id")
-    )
-    private List<Job> jobsAppliedFor;
-    
-    
-    // (connection with Requested_Jobs table)
-    // ------ OneToMany relationShip: one user has many requests
-  	@JsonManagedReference
-  	@OneToMany(mappedBy = "user_applied")
-  	private List<Requested_Jobs> user_requests;
-    
-    
-    
- // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
+    
     @PrePersist
 	protected void onCreate(){
 		this.createdAt = new Date();
@@ -98,10 +71,40 @@ public class User {
 	protected void onUpdate(){
 		this.updatedAt = new Date();
 	}
-
-	//constructor + getters and setters:
+    /*----------------------------------------------------------------------------
+	RELATIONS
+	----------------------------------------------------------------------------*/    
+    // (connection with UserApplocations table)
+    // OneToOne relation: one user has one UserApplication
+    @OneToOne(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private UserApplication userApplication;
+    
+    // (connection with job table)
+    // ManyToMany relation: many users applied for  many jobs
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "user_job", 
+        joinColumns = @JoinColumn(name = "user_id"), 
+        inverseJoinColumns = @JoinColumn(name = "job_id")
+    )
+    private List<Job> jobsAppliedFor;
+    
+   
+    // (connection with Requested_Jobs table)
+    // OneToMany relationShip: one user has many requests
+  	@JsonManagedReference
+  	@OneToMany(mappedBy = "user_applied")
+  	private List<Requested_Jobs> user_requests;
+    
+  	/*----------------------------------------------------------------------------
+	CONSTRUCTORS
+	----------------------------------------------------------------------------*/
 	public User() {
 	}
+	
+	/*----------------------------------------------------------------------------
+	GETTERS AND SETTERS
+	----------------------------------------------------------------------------*/
 	public Long getId() {
 		return id;
 	}

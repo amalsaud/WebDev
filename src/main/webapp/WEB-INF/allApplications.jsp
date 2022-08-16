@@ -7,7 +7,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Dashboard</title>
+<title>WebDev</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -46,29 +46,24 @@
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
 			<nav class="navbar bg-secondary navbar-dark">
-				<a class="navbar-brand mx-4 mb-3">
-					<h3>WebDev</h3>
-				</a>
+				<h3>
+					<a class="navbar-brand mx-4 mb-3">WebDev</a>
+				</h3>
 				<div class="navbar-nav w-100">
 					<a href="/hrindex" class="nav-item nav-link active">HR
 						Dashboard</a> <a href="/jobs/new" class="nav-item nav-link active">Jobs</a>
 					<a href="/displayrequests" class="nav-item nav-link active">View
 						Applications</a>
-
-
-
 				</div>
 			</nav>
 		</div>
 		<!-- Sidebar End -->
-
 
 		<!-- Content Start -->
 		<div class="content">
 			<!-- Navbar Start -->
 			<nav
 				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
@@ -100,65 +95,40 @@
 								<tr style="color: #0ee951;">
 									<th scope="col">Job Title</th>
 									<th scope="col">Applicant</th>
-									<th scope="col">Status</th>
-									<th scope="col">Action</th>
 								</tr>
 								<tr>
-
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="job" items="${jobs}">
 									<tr>
 										<td><c:out value="${job.title}" /></td>
-										<td><c:forEach var="oneReq" items="${job.job_requests}">
 
-											<p>	<a href="/userprofile/${oneReq.user_applied.id}"><c:out
-														value="${oneReq.user_applied.firstName} ${oneReq.user_applied.lastName}" /></a>
-														</p>
-											</c:forEach></td>
 										<td><c:forEach var="oneReq" items="${job.job_requests}">
-											<p><c:out value="${oneReq.status }" /></p>
-											</c:forEach></td>
-										<td><c:forEach var="oneReq" items="${job.job_requests}">
-
-												<!-- if App is pending: display Accept + Reject buttons -->
 												<c:if test="${oneReq.status eq 'pending'}">
-
-													<!-- User Accept -->
-													<div class="row">
-														<div class="col-3 m-1">
-															<form:form action="/acceptapp/${oneReq.id}" method="POST">
-																<input type="hidden" value="PUT" name="_method">
-																	<button class="btn2">Accept</button>
-															</form:form>
-														</div>
-														<div class="col-3 m-1">
-															<!-- User Reject -->
-															<form:form action="/rejectapp/${oneReq.id}" method="POST">
-																<input type="hidden" value="PUT" name="_method">
-																	<button class="btn2">Reject</button>
-															</form:form>
-														</div>
-													</div>
+													<p>
+														<a
+															href="/userprofile/${job.id}/${oneReq.id}/${oneReq.user_applied.id}"><c:out
+																value="${oneReq.user_applied.firstName} ${oneReq.user_applied.lastName}" /></a>
+													</p>
 												</c:if>
+
 											</c:forEach></td>
 									</tr>
-
 								</c:forEach>
 							</tbody>
 						</table>
 					</div>
 				</div>
 
-				<!-- Recent Jobs End -->
-				<!-- Recent Jobs End -->
 			</div>
-			<!-- Content End -->
 			<!-- Recent Jobs End -->
+
 		</div>
 		<!-- Content End -->
+
 	</div>
+	<!-- Container End -->
 
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

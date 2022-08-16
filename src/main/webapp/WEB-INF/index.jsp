@@ -50,14 +50,15 @@
 					</li>
 					<li class="nav-item"><a class="nav-link" href="#services">Services</a>
 					</li>
-			
+
 				</ul>
 				<span class="nav-item social-icons"> <span class="fa-stack">
-						<a href="https://www.facebook.com/"> <i class="fas fa-circle fa-stack-2x"></i>
-							<i class="fab fa-facebook-f fa-stack-1x"></i>
-					</a>
-				</span> <span class="fa-stack"> <a href="https://twitter.com/"> <i
+						<a href="https://www.facebook.com/"> <i
 							class="fas fa-circle fa-stack-2x"></i> <i
+							class="fab fa-facebook-f fa-stack-1x"></i>
+					</a>
+				</span> <span class="fa-stack"> <a href="https://twitter.com/">
+							<i class="fas fa-circle fa-stack-2x"></i> <i
 							class="fab fa-twitter fa-stack-1x"></i>
 					</a>
 				</span>
@@ -76,15 +77,18 @@
 				Best <span class="home_text">Software Services</span><br>For
 				You
 			</h1>
-			<p class="para para-light py-3">Lorem ipsum, dolor sit amet
-				consectetur adipisicing elit. Natus tempore accusamus quis magnam
-				doloremque itaque ad modi, pariatur iste labore similique officiis
-				impedit aspernatur aperiam facere architecto. Eligendi, repellendus
-				inventore!</p>
+			<p class="para para-light py-3">
+				We provide website development services that are on the cutting edge
+				of today's technologies.<br> Our Web developers are versed in
+				all Web technologies.<br> If you are looking for someone to
+				listen to your ideas and implement them exactly as you want,<br>
+				you will end up with high quality and aesthetically pleasing
+				interfaces.<br> You are in the right place !
+			</p>
 			<form action="/reg" method="get">
-			<button class="btn" type="submit">Apply for a job</button>
-			
+				<button class="btn" type="submit">Get Started</button>
 			</form>
+
 
 		</div>
 		<!-- end of container -->
@@ -97,21 +101,13 @@
 		<div class="container">
 			<div class="row d-flex align-items-center">
 				<div class="col-lg-7" data-aos="fade-right">
-					<p>ABOUT US</p>
-					<h1>
-						We are top software <br> development company
-					</h1>
-					<p class="py-2 para-light">Lorem ipsum dolor sit amet
-						consectetur adipisicing elit. Non sed accusantium aut dolores
-						inventore architecto modi cupiditate eligendi corporis, illum illo
-						culpa. Reiciendis, molestias. Illum voluptatum quisquam ad
-						veritatis dolorem.</p>
-					<p class="py-2 para-light">Lorem ipsum dolor sit amet
-						consectetur adipisicing elit. Non sed accusantium aut dolores
-						inventore architecto modi cupiditate eligendi corporis, illum illo
-						culpa. Reiciendis, molestias. Illum voluptatum quisquam ad
-						veritatis dolorem.</p>
-
+					<h1>We are currently hiring!</h1>
+					<p class="py-2 para-light">
+						If you are a software developer looking for an opportunity<br>
+						to build an amazing products, learn and improve, look no further!
+						<br> <br> Apply now and have the chance to join our
+						community.<br>
+					</p>
 				</div>
 				<div class="col-lg-5 text-center py-4 py-sm-0" data-aos="fade-down">
 					<img class="img-fluid" src="/assets/images/about.jpg" alt="about">
@@ -128,37 +124,39 @@
 			<div class="text-center pb-4">
 				<p>OUR SERVICES</p>
 				<h2 class="py-2">Explore unlimited possibilities</h2>
-				<p class="para-light">Lorem ipsum dolor sit amet consectetur
-					adipisicing elit. Vitae asperiores, quia accusantium sunt corporis
-					optio recusandae? Nostrum libero pariatur cumque, ipsa dolores
-					voluptatibus voluptate alias sit fuga. Itaque, ea quo.</p>
 			</div>
 			<div class="row gy-4 py-2" data-aos="zoom-in">
 				<div class="col-lg-4">
 					<div class="card bg-transparent">
 						<i class="fas fa-mobile fa-2x"></i>
 						<h4 class="py-2">MOBILE App</h4>
-						<p class="para-light">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Magnam odit consequatur doloribus natus in
-							suscipit!</p>
+						<p class="para-light">
+							Fuel your app idea with an expert team of mobile app developers
+							from the leading<br> mobile app development company, which
+							has helped 150+ clients accomplish their business goals.
+						</p>
 					</div>
 				</div>
 				<div class="col-lg-4">
 					<div class="card bg-transparent">
 						<i class="fas fa-home fa-2x"></i>
 						<h4 class="py-2">SECURITY</h4>
-						<p class="para-light">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Magnam odit consequatur doloribus natus in
-							suscipit!</p>
+						<p class="para-light">
+							Building a truly secure application is a priority for us !<br>
+							We integrate security practices into all stages of the software
+							development lifecycle, from training to response.
+						</p>
 					</div>
 				</div>
 				<div class="col-lg-4">
 					<div class="card bg-transparent">
 						<i class="fas fa-tv fa-2x"></i>
 						<h4 class="py-2">Web Development</h4>
-						<p class="para-light">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Magnam odit consequatur doloribus natus in
-							suscipit!</p>
+						<p class="para-light">
+							You need more than just a website, you need measurable business
+							results.<br> Therefore, you need more than just a web
+							designer – you need a partner that will deliver such results!!
+						</p>
 					</div>
 				</div>
 			</div>
@@ -181,9 +179,6 @@
 						<div class="text-center text-lg-start py-4 pt-lg-0">
 							<p>OUR WORK</p>
 							<h2 class="py-2">Explore unlimited possibilities</h2>
-							<p class="para-light">Lorem ipsum dolor sit amet consectetur,
-								adipisicing elit. Dignissimos dicta mollitia totam explicabo
-								obcaecati quia laudantium repudiandae.</p>
 						</div>
 						<div class="container" data-aos="fade-up">
 							<div class="row g-5">
@@ -231,10 +226,6 @@
 				<div class="text-center w-lg-75 m-auto pb-4">
 					<p>TESTIMONIALS</p>
 					<h2 class="py-2">What Our Clients Says</h2>
-					<p class="para-light">Lorem ipsum dolor sit, amet consectetur
-						adipisicing elit. Adipisci esse facilis vel, neque ipsa mollitia
-						impedit, commodi ab illo dignissimos, voluptatum quae amet sed
-						tenetur dolores reprehenderit laudantium quo sint.</p>
 				</div>
 			</div>
 			<!-- end of row -->
@@ -247,8 +238,8 @@
 								<!-- Slide -->
 								<div class="swiper-slide">
 									<div class="testimonial-card p-4">
-										<p>Lorem ipsum dolor, sit amet consectetur adipisicing
-											elit. Laboriosam commodi officia laborum qui iste quidem!</p>
+										<p>The product was delivered on time! exactly as I wanted
+											it to be,highly recommend WebDev company!</p>
 										<div class="d-flex pt-4">
 											<div>
 												<img class="avatar" src="/assets/images/testimonial-1.jpg"
@@ -266,8 +257,8 @@
 								<!-- Slide -->
 								<div class="swiper-slide">
 									<div class="testimonial-card p-4">
-										<p>Lorem ipsum dolor, sit amet consectetur adipisicing
-											elit. Laboriosam commodi officia laborum qui iste quidem!</p>
+										<p>I would describe my experience in two words:
+											flexibility and creativity! Brilliant team, amazing work.</p>
 										<div class="d-flex pt-4">
 											<div>
 												<img class="avatar" src="/assets/images/testimonial-2.jpg"
@@ -285,8 +276,9 @@
 								<!-- Slide -->
 								<div class="swiper-slide">
 									<div class="testimonial-card p-4">
-										<p>Lorem ipsum dolor, sit amet consectetur adipisicing
-											elit. Laboriosam commodi officia laborum qui iste quidem!</p>
+										<p>The team was super professional! They
+											fulfilled my requirements and expectations.
+											I am fully satisfied!</p>
 										<div class="d-flex pt-4">
 											<div>
 												<img class="avatar" src="/assets/images/testimonial-3.jpg"
@@ -304,8 +296,9 @@
 								<!-- Slide -->
 								<div class="swiper-slide">
 									<div class="testimonial-card p-4">
-										<p>Lorem ipsum dolor, sit amet consectetur adipisicing
-											elit. Laboriosam commodi officia laborum qui iste quidem!</p>
+										<p>I highly recommend cooperating with WebDev. You will
+											get more than what you need! brilliant
+											developers. </p>
 										<div class="d-flex pt-4">
 											<div>
 												<img class="avatar" src="/assets/images/testimonial-4.jpg"
@@ -368,7 +361,7 @@
 					</div>
 					<div class="ms-2">
 						<h6>SEND US MESSAGE</h6>
-						<p>infodemofile@example.com</p>
+						<p>infodemofile@gmail.com</p>
 					</div>
 				</div>
 			</div>
@@ -381,13 +374,12 @@
 	<div class="bottom py-2 text-light">
 		<div class="container d-flex justify-content-between">
 			<div>
-				<p>Copyright � WebDev</p>
+				<p>Copyright © WebDev</p>
 				<br>
 				<p>
 					Distributed by: <a href="#">WebDev</a>
 				</p>
 			</div>
-
 		</div>
 		<!-- end of container -->
 	</div>

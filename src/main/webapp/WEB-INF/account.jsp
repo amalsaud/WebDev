@@ -6,7 +6,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Account</title>
+<title>WebDev</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -42,17 +42,15 @@
 
 <body>
 	<div class="container-fluid position-relative d-flex p-0">
-
-
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
 			<nav class="navbar bg-secondary navbar-dark">
-				<a class="navbar-brand mx-4 mb-3">
-					<h3>WebDev</h3>
-				</a>
+				<h3>
+					<a class="navbar-brand mx-4 mb-3">WebDev</a>
+				</h3>
 				<div class="navbar-nav w-100">
-					<a href="/userdashboard" class="nav-item nav-link">User Dashboard</a> <a href="/edit"
-						class="nav-item nav-link">Edit</a> <a
+					<a href="/userdashboard" class="nav-item nav-link">User
+						Dashboard</a> <a href="/edit" class="nav-item nav-link">Edit</a> <a
 						href="/warning" class="nav-item nav-link active">Delete</a>
 				</div>
 			</nav>
@@ -64,10 +62,6 @@
 			<!-- Navbar Start -->
 			<nav
 				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-				<a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-					<h2 class="text-primary mb-0">
-					</h2>
-				</a>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
@@ -75,8 +69,7 @@
 							class="rounded-circle me-lg-2" src="/assets/images/icon.jpg"
 							alt="" style="width: 40px; height: 40px;"> <span
 							class="d-none d-lg-inline-flex"><c:out
-									value="${loggedFname}" /> <c:out
-									value="${loggedLname}" /></span>
+									value="${loggedFname}" /> <c:out value="${loggedLname}" /></span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
@@ -88,46 +81,38 @@
 			</nav>
 			<!-- Navbar End -->
 			<div class="container-fluid pt-4 px-4">
-								<h5 class="m-2">Create an Application</h5>
-			
+				<h5 class="m-2">Create an Application</h5>
 				<form:form class="form align-items-right ml-4 mt-5" action="/apply"
 					modelAttribute="newApplication" method="POST">
 					<div class="row g-4">
-
 						<div class="col-sm-12 col-xl-6 mb-4">
-
 							<div class="bg-secondary  h-100 p-4">
 								<h6>Skills and City</h6>
 								<div class="row">
 									<div class="col mb-2">
-
 										<label class="form-label">Skills</label><br>
 										<c:forEach items="${allSkills}" var="skill">
-										<div>
+											<div>
 												<form:checkbox path="skills_for_appl" value="${skill.id}"
-														 class="form-check-input"/>
-												<c:out value="${skill.skill_name}" /></div>
+													class="form-check-input" />
+												<c:out value="${skill.skill_name}" />
+											</div>
 										</c:forEach>
-
 									</div>
 									<div class="col mb-2 ">
-
-								<form:label class="form-label" path="city">City</form:label>
-								<form:select class="form-select" path="city"
-								aria-label="Default select example">
-								<c:forEach var="cityName" items="${citiesList}">
-									<form:option value="${cityName}">
-										<c:out value="${cityName}" />
-									</form:option>
-								</c:forEach>
-							</form:select>
-							<form:errors cssClass="invalid-feedback" path="city" />
-
-
+										<form:label class="form-label" path="city">City</form:label>
+										<form:select class="form-select" path="city"
+											aria-label="Default select example">
+											<c:forEach var="cityName" items="${citiesList}">
+												<form:option value="${cityName}">
+													<c:out value="${cityName}" />
+												</form:option>
+											</c:forEach>
+										</form:select>
+										<form:errors cssClass="invalid-feedback" path="city" />
 									</div>
 								</div>
 							</div>
-
 						</div>
 						<div class="col-sm-12 col-xl-6 mb-4">
 							<div class="bg-secondary  h-100 p-4">
@@ -135,7 +120,6 @@
 								<div class="mb-4">
 									<label class="form-label">GPA</label>
 									<form:input path="user_gpa" type="number" class="form-control" />
-
 								</div>
 								<div class="mb-3">
 									<label for="exampleInputPassword1" class="form-label">Years
@@ -143,14 +127,11 @@
 									<form:input path="years_experience" type="number"
 										class="form-control" />
 								</div>
-
 							</div>
 						</div>
-
 					</div>
 					<div class="mb-5 text-left">
 						<button class="btn2 col-2 m-2">Next</button>
-
 					</div>
 				</form:form>
 			</div>
@@ -160,6 +141,7 @@
 		<!-- Content End -->
 
 	</div>
+	<!-- Container End -->
 
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -15,7 +15,7 @@
 
 
 <!-- Webpage Title -->
-<title>Register</title>
+<title>WebDev</title>
 
 <!-- Styles -->
 <link type="text/css"
@@ -45,7 +45,6 @@
 				id="navbarSideCollapse" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<!-- end of navbar-collapse -->
 		</div>
 		<!-- end of container -->
@@ -64,7 +63,6 @@
 						<div class="text-center text-lg-start py-4 pt-lg-0">
 							<h2 class="py-2">Register</h2>
 						</div>
-
 						<div>
 							<form:form action="/register" method="post"
 								modelAttribute="newUser">
@@ -77,8 +75,8 @@
 												cssClass="form-control"
 												cssErrorClass="form-control is-invalid"
 												placeholder="Enter first name" />
-											<small>
-												<form:errors path="firstName" class="text-danger" />
+											<small> <form:errors path="firstName"
+													class="text-danger" />
 											</small>
 										</div>
 									</div>
@@ -89,8 +87,8 @@
 												cssClass="form-control"
 												cssErrorClass="form-control is-invalid"
 												placeholder="Enter last name" />
-											<small>
-												<form:errors path="lastName" class="text-danger" />
+											<small> <form:errors path="lastName"
+													class="text-danger" />
 											</small>
 										</div>
 									</div>
@@ -101,8 +99,7 @@
 										cssClass="form-control"
 										cssErrorClass="form-control is-invalid"
 										placeholder="Enter email" />
-									<small>
-										<form:errors path="email" class="text-danger" />
+									<small> <form:errors path="email" class="text-danger" />
 									</small>
 								</div>
 								<div class="form-group py-1">
@@ -111,8 +108,8 @@
 										cssClass="form-control"
 										cssErrorClass="form-control is-invalid"
 										placeholder="Enter password" />
-									<small>
-										<form:errors path="password" class="text-danger" />
+									<small> <form:errors path="password"
+											class="text-danger" />
 									</small>
 								</div>
 								<div class="form-group py-1">
@@ -121,8 +118,8 @@
 										cssClass="form-control"
 										cssErrorClass="form-control is-invalid"
 										placeholder="Confirm password" />
-									<small>
-										<form:errors path="confirmPassword" class="text-danger" />
+									<small> <form:errors path="confirmPassword"
+											class="text-danger" />
 									</small>
 								</div>
 								<div class="my-3">

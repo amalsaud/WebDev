@@ -6,7 +6,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Account</title>
+<title>WebDev</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -43,21 +43,17 @@
 <body>
 	<div class="container-fluid position-relative d-flex p-0">
 
-
-			<!-- Sidebar Start -->
+		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
 			<nav class="navbar bg-secondary navbar-dark">
-				<a class="navbar-brand mx-4 mb-3">
-					<h3>WebDev</h3>
-				</a>
+				<h3>
+					<a class="navbar-brand mx-4 mb-3">WebDev</a>
+				</h3>
 				<div class="navbar-nav w-100">
 					<a href="/hrindex" class="nav-item nav-link active">HR
 						Dashboard</a> <a href="/jobs/new" class="nav-item nav-link active">Jobs</a>
 					<a href="/displayrequests" class="nav-item nav-link active">View
 						Applications</a>
-
-
-
 				</div>
 			</nav>
 		</div>
@@ -68,11 +64,6 @@
 			<!-- Navbar Start -->
 			<nav
 				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-				<a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-					<h2 class="text-primary mb-0">
-						<i class="fa fa-user-edit"></i>
-					</h2>
-				</a>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
@@ -104,56 +95,40 @@
 								<h5>
 									<c:out value="${current_userApp.user.firstName}" />
 								</h5>
-
-
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Last Name</label>
 								<h5>
 									<c:out value="${current_userApp.user.lastName}" />
 								</h5>
-
-
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Email address</label>
 								<h5>
 									<c:out value="${current_userApp.user.email}" />
 								</h5>
-
-
 							</div>
-
-
 						</div>
 					</div>
-
 					<div class="col-sm-12 col-xl-6">
 						<div class="bg-secondary rounded h-100 p-4">
 							<h6 class="mb-4">Uploaded Files</h6>
 							<div class="mb-3">
 								<label class="form-label">Certificate</label>
-								<a href="/files/cer/${current_userApp.id}">
 								<h5>
-									<c:out value="${current_userApp.certFileName}" />
+									<a href="/files/cer/${current_userApp.id}"> <c:out
+											value="${current_userApp.certFileName}" />
+									</a>
 								</h5>
-								</a>
-
-
-
 							</div>
 							<div class="mb-3">
 								<label class="form-label">CV</label>
-								<a href="/files/${current_userApp.id}">
-								
 								<h5>
-									<c:out value="${current_userApp.cvFileName}" />
+									<a href="/files/${current_userApp.id}"> <c:out
+											value="${current_userApp.cvFileName}" />
+									</a>
 								</h5>
-								</a>
-
-
 							</div>
-
 						</div>
 					</div>
 					<div class="col-sm-12 col-xl-6">
@@ -162,50 +137,55 @@
 							<div class="mb-3">
 								<label class="form-label">Skills</label>
 								<h5>
-								<c:forEach var="skill" items="${user_skills}">
-									<c:out value="${skill.skill_name}" />
+									<c:forEach var="skill" items="${user_skills}">
+										<c:out value="${skill.skill_name}" />
 									</c:forEach>
-									
 								</h5>
-
 							</div>
 							<div class="mb-3">
 								<label class="form-label">City</label>
 								<h5>
 									<c:out value="${current_userApp.city}" />
 								</h5>
-
-
 							</div>
-
 						</div>
 					</div>
 					<div class="col-sm-12 col-xl-6">
 						<div class="bg-secondary rounded h-100 p-4">
-							<h6 class="mb-2">GPA & Experience</h6>
+							<h6 class="mb-2">GPA and Experience</h6>
 							<div class="mb-3">
 								<label class="form-label">GPA</label>
 								<h5>
 									<c:out value="${current_userApp.user_gpa}" />
 								</h5>
-
-
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Years of Experience</label>
 								<h5>
 									<c:out value="${current_userApp.years_experience}" />
 								</h5>
-
-
 							</div>
-
 						</div>
 					</div>
+					<!-- if App is pending: display Accept + Reject buttons -->
 
-
+					<!-- User Accept -->
+					<div class="row mt-3 d-flex justify-content-end">
+						<div class="col-1 m-2">
+							<form:form action="/acceptapp/${reqId}" method="POST">
+								<input type="hidden" value="PUT" name="_method">
+								<button class="btn2">Accept</button>
+							</form:form>
+						</div>
+						<div class="col-1 m-2">
+							<!-- User Reject -->
+							<form:form action="/rejectapp/${reqId}" method="POST">
+								<input type="hidden" value="PUT" name="_method">
+								<button class="btn2">Reject</button>
+							</form:form>
+						</div>
+					</div>
 				</div>
-
 
 			</div>
 			<!-- Form End -->

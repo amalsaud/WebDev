@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html lang="en">
 
 <head>
 <meta charset="utf-8">
-<title>Dashboard</title>
+<title>WebDev</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -45,26 +46,22 @@
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
 			<nav class="navbar bg-secondary navbar-dark">
-				<a class="navbar-brand mx-4 mb-3">
-					<h3>WebDev</h3>
-				</a>
+				<h3>
+					<a class="navbar-brand mx-4 mb-3">WebDev</a>
+				</h3>
 				<div class="navbar-nav w-100">
 					<a href="/userdashboard" class="nav-item nav-link active">User
 						Dashboard</a>
-
-
-
-
 				</div>
 			</nav>
 		</div>
 		<!-- Sidebar End -->
 
-
 		<!-- Content Start -->
 		<div class="content">
 			<c:if test="${error != null}">
-				<div class="alert alert-danger mt-2" style="color:red;" role="alert">
+				<div class="alert alert-danger mt-2" style="color: red;"
+					role="alert">
 					<c:out value="${error}" />
 				</div>
 			</c:if>
@@ -94,7 +91,6 @@
 				</div>
 			</nav>
 			<!-- Navbar End -->
-
 			<!-- Recent Jobs Start -->
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-secondary text-center rounded p-4">
@@ -106,7 +102,6 @@
 							class="table text-start align-middle table-bordered table-hover mb-0">
 							<thead>
 								<tr style="color: #0ee951;">
-									<th scope="col">ID</th>
 									<th scope="col">Job Title</th>
 									<th scope="col">Job Description</th>
 									<th scope="col">Location</th>
@@ -117,8 +112,8 @@
 							</thead>
 							<tbody class="text-white">
 								<c:forEach var="job" items="${jobs}">
+									<td>
 									<tr>
-										<td><c:out value="${job.id}" /></td>
 										<td><c:out value="${job.title}" /></td>
 										<td><c:out value="${job.description}" /></td>
 										<td><c:out value="${job.location}" /></td>
@@ -130,7 +125,32 @@
 											</form:form></td>
 									</tr>
 								</c:forEach>
-
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid pt-4 px-4">
+				<div class="bg-secondary text-center rounded p-4">
+					<div class="d-flex align-items-center justify-content-between mb-4">
+						<h6 class="mb-0">Requested Jobs</h6>
+					</div>
+					<div class="table-responsive">
+						<table
+							class="table text-start align-middle table-bordered table-hover mb-0">
+							<thead>
+								<tr style="color: #0ee951;">
+									<th scope="col">Job ID</th>
+									<th scope="col">Status</th>
+								</tr>
+							</thead>
+							<tbody class="text-white">
+								<c:forEach var="req" items="${requestedJobs}">
+									<tr>
+										<td><c:out value="${req.jobOffer.title}" /></td>
+										<td><c:out value="${req.status}" /></td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -139,20 +159,21 @@
 			<!-- Recent Jobs End -->
 		</div>
 		<!-- Content End -->
-		<!-- JavaScript Libraries -->
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-		<script src="lib/chart/chart.min.js"></script>
-		<script src="lib/easing/easing.min.js"></script>
-		<script src="lib/waypoints/waypoints.min.js"></script>
-		<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-		<script src="lib/tempusdominus/js/moment.min.js"></script>
-		<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-		<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+	</div>
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/chart/chart.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/waypoints/waypoints.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+	<script src="lib/tempusdominus/js/moment.min.js"></script>
+	<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+	<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-		<!-- Template Javascript -->
-		<script src="js/main.js"></script>
+	<!-- Template Javascript -->
+	<script src="js/main.js"></script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Account</title>
+<title>WebDev</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -46,15 +46,14 @@
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
 			<nav class="navbar bg-secondary navbar-dark">
-				<a class="navbar-brand mx-4 mb-3">
-					<h3>WebDev</h3>
-				</a>
+				<h3>
+					<a class="navbar-brand mx-4 mb-3">WebDev</a>
+				</h3>
 				<div class="navbar-nav w-100">
 					<a href="/userdashboard" class="nav-item nav-link"><i
-						class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <a
-						href="/edit" class="nav-item nav-link"><i
-						class="fa fa-th me-2"></i>Edit</a> <a href="/warning"
-						class="nav-item nav-link active"><i
+						class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <a href="/edit"
+						class="nav-item nav-link"><i class="fa fa-th me-2"></i>Edit</a> <a
+						href="/warning" class="nav-item nav-link active"><i
 						class="fa fa-keyboard me-2"></i>Delete</a>
 				</div>
 			</nav>
@@ -66,11 +65,6 @@
 			<!-- Navbar Start -->
 			<nav
 				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-				<a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-					<h2 class="text-primary mb-0">
-						<i class="fa fa-user-edit"></i>
-					</h2>
-				</a>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
@@ -78,8 +72,7 @@
 							class="rounded-circle me-lg-2" src="/assets/images/icon.jpg"
 							alt="" style="width: 40px; height: 40px;"> <span
 							class="d-none d-lg-inline-flex"><c:out
-									value="${loggedFname}" /> <c:out
-									value="${loggedLname}" /></span>
+									value="${loggedFname}" /> <c:out value="${loggedLname}" /></span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
@@ -91,28 +84,26 @@
 			</nav>
 			<!-- Navbar End -->
 
-
 			<!-- Form Start -->
 			<div class="container-fluid pt-4 px-4">
 				<form action="/upload" method="POST" enctype="multipart/form-data">
 					<div class="row g-4">
 						<div class="col-sm-12 col-xl-6 mb-4">
-						
 							<div class="bg-secondary  h-100 p-4">
-												<h6>CV and Certificate</h6>
-							
+								<h6>CV and Certificate</h6>
 								<label class="form-label">CV File:</label>
 								<div class="col-12">
-									<input required class="form-control bg-dark mb-2" type="file" Class="form-control" name="file" /> <label
-										class="form-label">Certificate File:</label> <input required class="form-control bg-dark"
-										type="file" Class="form-control" name="file2" />
+									<input required class="form-control bg-dark mb-2" type="file"
+										Class="form-control" name="file" /> <label class="form-label">Certificate
+										File:</label> <input required class="form-control bg-dark" type="file"
+										Class="form-control" name="file2" />
 								</div>
 							</div>
 							<div class="col-12">
 								<button class="btn2 mt-2 m-2" type="submit">Submit</button>
 							</div>
 						</div>
-						</div>
+					</div>
 				</form>
 				<!-- Form End -->
 			</div>

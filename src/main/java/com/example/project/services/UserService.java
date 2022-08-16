@@ -29,14 +29,13 @@ public class UserService {
 			String hashed = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
 			newUser.setPassword(hashed);
 			User user = userRepo.save(newUser);
-				user.setUser_role("NORMAL");
-				userRepo.save(user); 
-		return user;
+			user.setUser_role("NORMAL");
+			userRepo.save(user);
+			return user;
 		}
 	}
-	
-	public User login(LoginUser newLogin,
-			BindingResult result) {
+
+	public User login(LoginUser newLogin, BindingResult result) {
 		if (result.hasErrors()) {
 			return null;
 		}
@@ -58,8 +57,10 @@ public class UserService {
 			return user;
 		}
 	}
-	
-	
+
+	/*----------------------------------------------------------------------------
+	find logged user by id
+	----------------------------------------------------------------------------*/
 	public User findById(Long id) {
 		Optional<User> optionalUser = userRepo.findById(id);
 		if (optionalUser.isPresent()) {
@@ -68,8 +69,10 @@ public class UserService {
 			return null;
 		}
 	}
-	
-	//delete item method:
+
+	/*----------------------------------------------------------------------------
+	delete user account
+	----------------------------------------------------------------------------*/
 	public void deleteAccount(Long id) {
 		User currentUser = findById(id);
 		userRepo.delete(currentUser);

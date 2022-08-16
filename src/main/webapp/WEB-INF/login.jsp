@@ -14,7 +14,7 @@
 <meta name="author" content="Your name">
 
 <!-- Webpage Title -->
-<title>Login</title>
+<title>WebDev</title>
 
 <!-- Styles -->
 <link
@@ -71,8 +71,7 @@
 										cssClass="form-control"
 										cssErrorClass="form-control is-invalid"
 										placeholder="Enter email" />
-									<small>
-										<form:errors path="email" class="text-danger" />
+									<small> <form:errors path="email" class="text-danger" />
 									</small>
 								</div>
 								<div class="form-group py-1">
@@ -81,8 +80,8 @@
 										cssClass="form-control"
 										cssErrorClass="form-control is-invalid"
 										placeholder="Enter password" />
-									<small>
-										<form:errors path="password" class="text-danger" />
+									<small> <form:errors path="password"
+											class="text-danger" />
 									</small>
 								</div>
 								<div class="my-3">
@@ -91,7 +90,6 @@
 								</div>
 							</form:form>
 						</div>
-
 					</div>
 					<!-- end of div -->
 				</div>

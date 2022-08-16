@@ -47,9 +47,9 @@
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
 			<nav class="navbar bg-secondary navbar-dark">
-				<a class="navbar-brand mx-4 mb-3">
-					<h3>WebDev</h3>
-				</a>
+				<h3>
+					<a class="navbar-brand mx-4 mb-3">WebDev</a>
+				</h3>
 				<div class="navbar-nav w-100">
 					<a href="/userdashboard" class="nav-item nav-link"><i
 						class="fa fa-tachometer-alt me-2"></i>Dashboard</a> <a href="/edit"
@@ -63,14 +63,10 @@
 
 		<!-- Content Start -->
 		<div class="content">
+
 			<!-- Navbar Start -->
 			<nav
 				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-				<a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-					<h2 class="text-primary mb-1">
-						<i class="fa fa-user-edit"></i>
-					</h2>
-				</a>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
@@ -78,8 +74,7 @@
 							class="rounded-circle me-lg-2" src="/assets/images/icon.jpg"
 							alt="" style="width: 40px; height: 40px;"> <span
 							class="d-none d-lg-inline-flex"><c:out
-									value="${loggedFname}" /> <c:out
-									value="${loggedLname}" /></span>
+									value="${loggedFname}" /> <c:out value="${loggedLname}" /></span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
@@ -97,41 +92,36 @@
 				<input type="hidden" value="PUT" name="_method">
 				<div class="container-fluid pt-4 px-4">
 					<div class="row g-4">
-												<div class="col-sm-12 col-xl-6 mb-4">
+						<div class="col-sm-12 col-xl-6 mb-4">
 
 							<div class="bg-secondary  h-100 p-4">
 								<h6>Skills and City</h6>
 								<div class="row">
 									<div class="col mb-2">
-
 										<label class="form-label">Skills</label><br>
 										<c:forEach items="${allSkills}" var="skill">
-										<div>
-										
-												<form:checkbox path="skills_for_appl" value="${skill.id}"
-														 class="form-check-input"/>
-												<c:out value="${skill.skill_name}" /></div>
-										</c:forEach>
+											<div>
 
+												<form:checkbox path="skills_for_appl" value="${skill.id}"
+													class="form-check-input" />
+												<c:out value="${skill.skill_name}" />
+											</div>
+										</c:forEach>
 									</div>
 									<div class="col mb-2 ">
-
-								<form:label class="form-label" path="city">City</form:label>
-								<form:select class="form-select" path="city"
-								aria-label="Default select example">
-								<c:forEach var="cityName" items="${citiesList}">
-									<form:option value="${cityName}">
-										<c:out value="${cityName}" />
-									</form:option>
-								</c:forEach>
-							</form:select>
-							<form:errors cssClass="invalid-feedback" path="city" />
-
-
+										<form:label class="form-label" path="city">City</form:label>
+										<form:select class="form-select" path="city"
+											aria-label="Default select example">
+											<c:forEach var="cityName" items="${citiesList}">
+												<form:option value="${cityName}">
+													<c:out value="${cityName}" />
+												</form:option>
+											</c:forEach>
+										</form:select>
+										<form:errors cssClass="invalid-feedback" path="city" />
 									</div>
 								</div>
 							</div>
-
 						</div>
 						<div class="col-sm-12 col-xl-6 mb-4">
 							<div class="bg-secondary rounded h-100 p-4">
@@ -145,26 +135,21 @@
 									<form:input path="years_experience" type="number"
 										class="form-control" />
 								</div>
-
 							</div>
 						</div>
-
 					</div>
-
-
 				</div>
 				<div class="mb-5 text-left m-4">
 					<button class="btn2 col-2 m-2">Next</button>
-
 				</div>
 			</form:form>
-
 			<!-- Form End -->
 
 		</div>
 		<!-- Content End -->
 
 	</div>
+	<!-- Container End -->
 
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

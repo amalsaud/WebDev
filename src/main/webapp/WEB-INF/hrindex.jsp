@@ -7,7 +7,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Dashboard</title>
+<title>WebDev</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -43,32 +43,29 @@
 
 <body>
 	<div class="container-fluid position-relative d-flex p-0">
+
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
 			<nav class="navbar bg-secondary navbar-dark">
-				<a class="navbar-brand mx-4 mb-3">
-					<h3>WebDev</h3>
-				</a>
+				<h3>
+					<a class="navbar-brand mx-4 mb-3">WebDev</a>
+				</h3>
 				<div class="navbar-nav w-100">
 					<a href="/hrindex" class="nav-item nav-link active">HR
 						Dashboard</a> <a href="/jobs/new" class="nav-item nav-link active">Jobs</a>
 					<a href="/displayrequests" class="nav-item nav-link active">View
 						Applications</a>
-
-
-
 				</div>
 			</nav>
 		</div>
 		<!-- Sidebar End -->
 
-
 		<!-- Content Start -->
 		<div class="content">
+
 			<!-- Navbar Start -->
 			<nav
 				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
@@ -122,12 +119,12 @@
 				</div>
 			</div>
 			<!-- Recent Jobs End -->
+
 		</div>
 		<!-- Content End -->
-		<!-- Recent Jobs End -->
+
 	</div>
-	<!-- Content End -->
-	</div>
+	<!-- Container End -->
 
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

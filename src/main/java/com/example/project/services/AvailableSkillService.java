@@ -9,16 +9,17 @@ import com.example.project.repositories.AvailableSkillsRepository;
 
 @Service
 public class AvailableSkillService {
-	
+
 	@Autowired
 	private AvailableSkillsRepository availableSkillRepo;
+
 	public AvailableSkillService(AvailableSkillsRepository availableSkillRepo) {
 		this.availableSkillRepo = availableSkillRepo;
 	}
-	
-	public List<AvailableSkills> allSkills(){
+
+	public List<AvailableSkills> allSkills() {
 		List<AvailableSkills> allSkills = availableSkillRepo.findAll();
 		return allSkills;
 	}
-	
+
 }
