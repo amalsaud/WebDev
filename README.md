@@ -48,8 +48,6 @@ WebDev website is a recruitment portal for WebDev company.
 
 - Accept or reject each application; Then, a response email will be automatically sent to the applicant whether the job application is accepted or rejected.
 
-### Installing Dependencies
-
 ### Authors
 
 - [Nada Alsogour](https://github.com/Nada-bit73)
