@@ -47,3 +47,16 @@ WebDev website is a recruitment portal for WebDev company.
 - Download the applicant's CV and certificate files.
 
 - Accept or reject each application; Then, a response email will be automatically sent to the applicant whether the job application is accepted or rejected.
+
+### Installing Dependencies
+
+### Authors
+
+- [Nada Alsogour](https://github.com/Nada-bit73)
+- [Sarah Alsaedi](https://github.com/sarah-47)
+- [Fatimah Alghamdi](https://github.com/fatimahmalghamdi)
+- [Amal Aldawsari](https://github.com/amalsaud)
+
+### Acknowledgements
+
+We want to convey our appreciation and gratitude to Coding Dojo and Saudi Digital Academy for this opportunity.
