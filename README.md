@@ -50,7 +50,7 @@ WebDev website is a recruitment portal for WebDev company.
 
 ### Demo
 
-[WebDev](https://www.youtube.com/watch?v=1dM5_WbRUwg&ab_channel=AmalAldawsari)
+[WebDev Demo](https://www.youtube.com/watch?v=1dM5_WbRUwg&ab_channel=AmalAldawsari)
 
 ### Authors
 
